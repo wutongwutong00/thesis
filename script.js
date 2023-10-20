@@ -12,7 +12,7 @@ function showDeath(){
 }
 
 function keratin(){
-    var keratinWindow = window.open("", "keratin", "width=200,height=100");
+    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/keratin.html", "keratin", "width=200,height=100");
     // keratinWindow.document.write(
     //     "<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>"
     //     );
