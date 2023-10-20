@@ -14,14 +14,39 @@ display: none;
     color: black;
     background-color: yellow;
     animation-name: keratinAnimation;
-    animation-duration: 6s;
+    animation-duration: 4s;
     animation-play-state: paused;
 }
 #keratin span:hover{
     animation-play-state: running; 
 } 
-
 @keyframes keratinAnimation {
     0%   {font-size: 15px;}
     100% {font-size: 60px;}
+}
+
+#cityHair span{
+    /* color: white; */
+    animation-name: cityHairAnimation;
+    animation-duration: 1.5s;
+    animation-play-state: paused;
+}
+#cityHair span:hover {
+    /* animation-name: cityHairAnimation;
+    animation-duration: 10s;
+    animation-play-state: running;  */
+    animation-play-state: running; 
+    transition-delay: 2ms;
+    /* color: black; */
+    
+}
+@keyframes cityHairAnimation {
+    0%   {filter: blur(0px);
+          font-size: 18px;
+    opacity: 0;
+}
+    100% {filter: blur(7px);
+          font-size: 70px;
+    opacity: 100;
+}
   }
