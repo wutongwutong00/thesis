@@ -11,6 +11,7 @@ display: none;
 }
 
 #keratin span{
+    font-family: bradford;
     color: black;
     /* background-color: yellow; */
     animation-name: keratinAnimation;
@@ -27,6 +28,7 @@ display: none;
 }
 
 #cityHair span{
+    font-family: bradford;
     /* color: white; */
     animation-name: cityHairAnimation;
     animation-duration: 1.5s;
