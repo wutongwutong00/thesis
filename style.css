@@ -12,17 +12,18 @@ display: none;
 
 #keratin span{
     color: black;
-    background-color: yellow;
+    /* background-color: yellow; */
     animation-name: keratinAnimation;
-    animation-duration: 4s;
+    animation-duration: 2s;
     animation-play-state: paused;
 }
 #keratin span:hover{
     animation-play-state: running; 
 } 
 @keyframes keratinAnimation {
-    0%   {font-size: 15px;}
-    100% {font-size: 60px;}
+    0%   {font-size: 20px;}
+    100% {font-size: 1px;
+          visibility: hidden;}
 }
 
 #cityHair span{
