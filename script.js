@@ -17,3 +17,6 @@ function keratin(){
     //     "<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>"
     //     );
 }
+
+const keratinText = text.split(" ");
+document.getElementById("keratin").innerHTML = keratinText; 
