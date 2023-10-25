@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>sketching: cytokinin and auxin</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
     <style>
-        @font-face {
+        /* @font-face {
             font-family: bradford;
             src: url(/assets/BradfordMonoLLTrialWeb-Regular.woff2);
         }
@@ -17,13 +17,13 @@
             margin: 5%;
             font-family: bradford;
             font-size: 2px;
-        }
+        } */
     </style>
 </head>
 
 <body>
     <main>
-        <p style="font-size: 20px;">
+        <p>
             The hormones auxin and cytokinin are key regulators of plant growth and development. As they are active at minute concentrations and regulate dynamic processes, cell and tissue levels of the hormones are finely controlled developmentally, diurnally, and in response to environmental variables.
         </p>
     </main>
@@ -31,12 +31,14 @@
     <script>
 
 let dots = [];
+let words = [];
+let currentWordIndex = 0;
 let mouse = {
   x:0, 
   y:0
 }
 
-let maxDotCount = 50;
+let maxDotCount = 1;
 
 class Dot {
   x;
@@ -47,9 +49,11 @@ class Dot {
     this.y = 0;
     this.createNode();
   }
+
   createNode () {
     this.nodeEl = document.createElement('div');
-    this.nodeEl.textContent = "The hormones auxin and cytokinin are key regulators of plant growth and development. As they are active at minute concentrations and regulate dynamic processes, cell and tissue levels of the hormones are finely controlled developmentally, diurnally, and in response to environmental variables.";
+    // this.nodeEl.textContent = "The hormones auxin and cytokinin are key regulators of plant growth and development. As they are active at minute concentrations and regulate dynamic processes, cell and tissue levels of the hormones are finely controlled developmentally, diurnally, and in response to environmental variables.";
+    this.nodeEl.textContent = '';
     // this.nodeEl.style.backgroundColor = 'cornflowerblue';
     this.nodeEl.style.position = 'absolute';
     this.nodeEl.style.width = '1000px';
@@ -62,6 +66,7 @@ class Dot {
   }
 }
 
+words = "The hormones auxin and cytokinin are key regulators of plant growth and development. As they are active at minute concentrations and regulate dynamic processes, cell and tissue levels of the hormones are finely controlled developmentally, diurnally, and in response to environmental variables.".split(' ');
 for (let i = 0; i < maxDotCount; i++ ) {
   let d = new Dot ();
   dots.push(d);
@@ -78,25 +83,59 @@ const redraw = () => {
     dot.x = x;
     dot.y = y;
 
+    dot.nodeEl.textContent = words[currentWordIndex];
+
     dot.drawDot();
 
     x += (nextDot.x - dot.x) * 0.9;
     y += (nextDot.y - dot.y) * 0.9;
     
   });
+
+currentWordIndex = (currentWordIndex + 1) % words.length;
 }
+// window.addEventListener('click',() => {
+//     this.placeDot();
+// })
 
 window.addEventListener('mousemove', (event) => {
   mouse.x = event.pageX;
   mouse.y = event.pageY;
+})
+
+// window.addEventListener('click', () => {
+//   printCurrentWord(); // Call the function to print the current word
+// });
+
+// function printCurrentWord() {
+//   const word = words[currentWordIndex];
+//   console.log('Current Word:', word);
+// }
+
+window.addEventListener('click', () => {
+  displayWordInWindow();
 });
+
+function displayWordInWindow() {
+  const word = words[currentWordIndex];
+  const wordDiv = document.createElement('div');
+  wordDiv.textContent = word;
+  wordDiv.style.position = 'absolute';
+  wordDiv.style.backgroundColor = 'white';
+//   wordDiv.style.top = '50%';
+//   wordDiv.style.left = '50%';
+  wordDiv.style.top = this.event.pageX + 'px';
+  wordDiv.style.left = this.event.pageY + 'px';
+//   wordDiv.style.transform = 'translate(-50%, -50%)'; // Center the word
+  document.body.appendChild(wordDiv);
+}
 
 const animate = () => {
   redraw();
   requestAnimationFrame(animate);
 }
 
-animate();
+animate()
 
     </script>
 </body>
