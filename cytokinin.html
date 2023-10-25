@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sketching: cytokinin and auxin</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+    <style>
+        @font-face {
+            font-family: bradford;
+            src: url(/assets/BradfordMonoLLTrialWeb-Regular.woff2);
+        }
+        body {
+            margin: 5%;
+            font-family: bradford;
+            font-size: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <p style="font-size: 20px;">
+            The hormones auxin and cytokinin are key regulators of plant growth and development. As they are active at minute concentrations and regulate dynamic processes, cell and tissue levels of the hormones are finely controlled developmentally, diurnally, and in response to environmental variables.
+        </p>
+    </main>
+
+    <script>
+
+let dots = [];
+let mouse = {
+  x:0, 
+  y:0
+}
+
+let maxDotCount = 50;
+
+class Dot {
+  x;
+  y;
+  nodeEl;
+  constructor() {
+    this.x = 0;
+    this.y = 0;
+    this.createNode();
+  }
+  createNode () {
+    this.nodeEl = document.createElement('div');
+    this.nodeEl.textContent = "The hormones auxin and cytokinin are key regulators of plant growth and development. As they are active at minute concentrations and regulate dynamic processes, cell and tissue levels of the hormones are finely controlled developmentally, diurnally, and in response to environmental variables.";
+    // this.nodeEl.style.backgroundColor = 'cornflowerblue';
+    this.nodeEl.style.position = 'absolute';
+    this.nodeEl.style.width = '1000px';
+    this.nodeEl.style.height = '40px';
+    document.body.appendChild(this.nodeEl);    
+  }
+  drawDot () {
+    this.nodeEl.style.left = this.x + 'px';
+    this.nodeEl.style.top = this.y + 'px'; 
+  }
+}
+
+for (let i = 0; i < maxDotCount; i++ ) {
+  let d = new Dot ();
+  dots.push(d);
+}
+
+const redraw = () => {
+  let x = mouse.x;
+  let y = mouse.y; 
+
+  dots.forEach((dot, index, dots) => {
+
+    let nextDot = dots[index + 1] || dots[0];
+
+    dot.x = x;
+    dot.y = y;
+
+    dot.drawDot();
+
+    x += (nextDot.x - dot.x) * 0.9;
+    y += (nextDot.y - dot.y) * 0.9;
+    
+  });
+}
+
+window.addEventListener('mousemove', (event) => {
+  mouse.x = event.pageX;
+  mouse.y = event.pageY;
+});
+
+const animate = () => {
+  redraw();
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+    </script>
+</body>
+
+</html>

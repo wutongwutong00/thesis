@@ -20,3 +20,9 @@ function keratin(){
 function cityHair(){
     var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/cityhair.html", "cityHair", "width=200,height=600");
 }
+function cytokinin(){
+    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/cytokinin.html", "cityHair", "width=1920,height=1080");
+}
+function cytokinin2(){
+    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/cytokinin2.html", "cityHair", "width=1080,height=1080");
+}
