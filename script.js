@@ -13,16 +13,22 @@ function showDeath(){
 
 function keratin(){
     var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/keratin.html", "keratin", "width=300,height=200");
-    // keratinWindow.document.write(
-    //     "<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>"
-    //     );
 }
+function keratin(){
+    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/keratin2.html", "keratin2", "width=300,height=200");
+}
+
 function cityHair(){
     var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/cityhair.html", "cityHair", "width=200,height=600");
 }
 function cytokinin(){
-    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/cytokinin.html", "cityHair", "width=1920,height=1080");
+    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/cytokinin.html", "cytokinin", "width=1920,height=1080");
 }
 function cytokinin2(){
-    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/cytokinin2.html", "cityHair", "width=1080,height=1080");
+    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/cytokinin2.html", "cytokinin2", "width=1080,height=1080");
 }
+function hairfall(){
+    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/hairfall/index.html", "hairfall", "width=1s080,height=1920");
+}
+
+

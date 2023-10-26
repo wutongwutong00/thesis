@@ -2,7 +2,7 @@
     font-family: bradford;
     src: url(/assets/BradfordMonoLLTrialWeb-Regular.woff2);
   }
-body {
+html, body {
     margin: 5%;
     font-family: bradford;
 }
@@ -25,6 +25,36 @@ display: none;
     0%   {font-size: 20px;}
     100% {font-size: 1px;
           visibility: hidden;}
+}
+
+#keratin2 {
+    text-align: center;
+}
+#keratin2 span{
+    font-family: bradford;
+    color: black;
+    /* background-color: yellow; */
+    animation-name: keratinAnimation2;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+#keratin2 span:hover{
+    background-color: yellow;
+    animation-play-state: paused;
+} 
+
+::selection {
+    color: red;
+    background: yellow;
+  }
+@keyframes keratinAnimation2 {
+    0%   {font-size: 20px;
+          line-height: 20px;
+    }
+    100% {font-size: 100px;
+          line-height: 3px;
+    }
 }
 
 #cityHair span{

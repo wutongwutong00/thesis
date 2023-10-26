@@ -1,0 +1,12 @@
+html, body {
+  margin: 5%;
+  font-family: bradford;
+}  
+@font-face {
+    font-family: bradford;
+    src: url(../assets/BradfordMonoTrial-Regular.otf);
+  }
+canvas {
+  display: block;
+  font-family: bradford;
+}
