@@ -28,7 +28,7 @@ function cytokinin2(){
     var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/cytokinin2.html", "cytokinin2", "width=1080,height=1080");
 }
 function hairfall(){
-    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/hairfall/index.html", "hairfall", "width=1s080,height=1920");
+    var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/hairfall/index.html", "hairfall", "width=1080,height=1800");
 }
 
 
