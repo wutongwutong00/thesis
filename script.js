@@ -11,13 +11,13 @@ function showDeath(){
     document.getElementById("death").style.display = "block";
 }
 
+
 function keratin(){
     var keratinWindow = window.open("https://wutongwutong00.github.io/thesis/keratin.html", "keratin", "width=300,height=200");
 }
 function keratin2(){
     var keratin2Window = window.open("https://wutongwutong00.github.io/thesis/keratin2.html", "keratin2", "width=300,height=200");
 }
-
 function cityHair(){
     var cityHairWindow = window.open("https://wutongwutong00.github.io/thesis/cityhair.html", "cityHair", "width=200,height=600");
 }
